@@ -1,0 +1,95 @@
+@charset "UTF-8";
+/* http://www.paulirish.com/2012/box-sizing-border-box-ftw/ */
+/* https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+
+
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+
+/* STEP 5: Base typography */
+body {
+	font: 150%/1.5 Geneva, Verdana, sans-serif;
+}
+
+/* STEP 6: Outline all elements to be arranged in layout */
+div#container {
+	outline: 5px dashed red;
+/* STEP 7: Set the width and the margins of the page container */
+	width: 80%;
+	margin: 0 auto; /* shorthand */
+}
+
+/* STEP 10: Layer positioned elements with z-index */
+header {
+	outline: 5px dashed green;
+	position: fixed;
+	background: yellow;
+	opacity: 0.5;
+	top: 0;
+	z-index: 100;
+}
+
+main {
+	outline: 5px dashed greenyellow;
+	/* STEP 8e: Set a float to clear a float */
+	margin-top: 225px;
+
+}
+
+section {
+	outline: 5px dashed lightseagreen;
+	/* STEP 8a: Set the width of the <section> and the <aside> columns */
+	width: 70%; /* 70% of the parent main element */
+	/* STEP 8b: Float the 2 columns right and left */
+	
+	float: right;
+	
+	/* STEP 8c: Break the float, and experiment with border-box sizing at top of CSS file */
+	padding: 0 2.5%;
+	/* STEP 8f: Experiment with inline-block to arrange the 2 columns inside the <main> */
+	/*display: inline-block;*/
+}
+
+aside {
+	outline: 5px dashed mediumpurple;
+	width: 30%;
+	
+	/*margin-left: 70%;*/
+	float: left;
+	/* STEP 8g: vertically align the <aside> column */
+	overflow: hidden;
+	/*display: inline-block;*/
+	/*vertical-align: top;*/
+}
+
+footer {
+	outline: 5px dashed hotpink;
+	/* STEP 8d: Clear the footer, noticing that the <main> element is collapsed */
+	clear: both;
+}
+/* STEP 11: Control visibility and display properties */
+main p img {
+	/*display: none;*/
+	visibility: hidden;
+}
+/* STEP 9: Absolute and fixed positioning */
+p.social {
+	position: fixed;
+	margin: 0;
+	top: 100px;
+	right: 0;
+	z-index: 200;
+	font-family: socialicoregular;
+	font-size: 60px;
+	color: white;
+	background-color: rgba(0,0,0,0.7);
+	height: 100px;
+	width: 250px;
+	padding: 10px;
+	text-align: center;
+}
